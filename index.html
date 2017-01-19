@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <link type="text/css" rel="stylesheet" href="Resources/css/style.css" />
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var ul = document.getElementById("ul1");
+            var width = ul.offsetWidth;
+            var newWidth = (width - 20) / 7;
+            var li = document.getElementsByClassName("nav-li");
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.width = newWidth + "px";
+            }
+        }
+
+        window.onresize = function () {
+            var ul = document.getElementById("ul1");
+            var width = ul.offsetWidth;
+            var newWidth = (width - 20) / 7;
+            var li = document.getElementsByClassName("nav-li");
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.width = newWidth + "px";
+            }
+        }
+
+    </script>
+    <title>Fun</title>
+</head>
+<body>
+    <div class="nav-top">
+        <ul class="nav-ul" id="ul1">
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:red">首页</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:orange">博文</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:yellowgreen">图片</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:green">贰</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:darkcyan">零</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:blue">壹</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:purple">柒</div></a></li>
+        </ul>
+    </div>
+
+    <div style="height:50px;margin-bottom:10px"></div>
+
+    <!--<div class="clear"></div>-->
+
+    <div class="div-content">
+        <br />
+        空中飞过的不是鸟 水中游荡的亦非鱼
+    </div>
+
+    <div class="footer">
+        <br />
+        <span class="footer-span">历史访问人数:<a style="color:purple">16357</a></span><br /><br />
+        <div class="footer-span">
+            <span> 联系方式：</span>
+            <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=HigpKicoLS8oLV5vbzB9cXM">给我写信</a>
+        </div>
+    </div>
+</body>
+
+
+</html>
