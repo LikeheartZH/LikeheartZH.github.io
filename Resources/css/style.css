@@ -46,11 +46,18 @@ body {
     background-color: #FFFFFF;
     cursor: pointer;
     color: pink;
+   
+    font-size: large;
 }
 
     .li-div:hover {
-        background-color: lightgrey;
-        color: black;
+         text-shadow: 8px 5px 1px pink;
+        /*旋转*/
+        transform: rotate(20deg);
+        -ms-transform: rotate(20deg); /* IE 9 */
+        -moz-transform: rotate(20deg); /* Firefox */
+        -webkit-transform: rotate(20deg); /* Safari 和 Chrome */
+        -o-transform: rotate(20deg); /* Opera */
     }
 
 a {
@@ -64,6 +71,9 @@ a {
     background-color: #f6f3f3;
     box-shadow: 0px 5px 10px #888888;
     text-align: center;
+}
+
+.div-canvas {
 }
 
 .clear {
