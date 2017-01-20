@@ -14,6 +14,31 @@
             for (var i = 0; i < li.length; i++) {
                 li[i].style.width = newWidth + "px";
             }
+            
+             var tangram = [
+ { p: [{ x: 0, y: 0 }, { x: 40, y: 0 }, { x: 40, y: 160 }, { x: 0, y: 160 }], color: "#caff67" },
+ { p: [{ x: 40, y: 0 }, { x: 160, y: 0 }, { x: 160, y: 40 }, { x: 40, y: 40 }], color: "#67becf" },
+ { p: [{ x: 40, y: 40 }, { x: 120, y: 40 }, { x: 120, y: 120 }, { x: 40, y: 120 }], color: "#ef3d61" },
+ { p: [{ x: 120, y: 40 }, { x: 160, y: 40 }, { x: 160, y: 0 }, { x: 200, y: 0 }, { x: 200, y: 160 }, { x: 160, y: 160 }, { x: 160, y: 120 }, { x: 120, y: 120 }], color: "#f9f51a" },
+ { p: [{ x: 0, y: 160 }, { x: 40, y: 160 }, { x: 40, y: 120 }, { x: 80, y: 120 }, { x: 80, y: 160 }, { x: 120, y: 160 }, { x: 120, y: 200 }, { x: 0, y: 200 }], color: "#a54c09" },
+ { p: [{ x: 80, y: 120 }, { x: 160, y: 120 }, { x: 160, y: 160 }, { x: 200, y: 160 }, { x: 200, y: 200 }, { x: 120, y: 200 }, { x: 120, y: 160 }, { x: 80, y: 160 }], color: "#fa8ccc" }
+            ];
+            var canvas = document.querySelector("canvas"); //获取canvas元素
+            var context = canvas.getContext("2d");  //获取绘图上下文环境
+            for (var i = 0; i < tangram.length; i++) {
+                draw(context, tangram[i]);
+            };
+            function draw(ctxt, piece) {
+                ctxt.beginPath();  //开始路径
+                ctxt.moveTo(piece.p[0].x, piece.p[0].y);  //canvas画笔移动到目标点
+                for (var i = 1; i < piece.p.length; i++) {
+                    ctxt.lineTo(piece.p[i].x, piece.p[i].y);  //canvas画笔依次绘制路径点
+                };
+                ctxt.closePath();  //闭合路径
+                ctxt.fillStyle = piece.color; //填充颜色
+                ctxt.stroke();
+                ctxt.fill(); //图形的填充
+            }
         }
 
         window.onresize = function () {
@@ -49,6 +74,11 @@
     <div class="div-content">
         <br />
         空中飞过的不是鸟 水中游荡的亦非鱼
+        
+        <div class="div-canvas" style="margin-top:150px">
+            <canvas id="canvas" width="200" height="200">your browser does not support the canvas tag!</canvas>
+        </div>
+        
     </div>
 
     <div class="footer">
