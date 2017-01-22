@@ -3,32 +3,53 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+
+    <!--<link type="text/css" rel="stylesheet" href="Resources\css\style.css" />-->
     <link type="text/css" rel="stylesheet" href="https://rawgithub.com/LikeheartZH/LikeheartZH.github.io/master/Resources/css/style.css" />
     <script type="text/javascript">
 
         window.onload = function () {
+
             var ul = document.getElementById("ul1");
             var width = ul.offsetWidth;
             var newWidth = (width - 20) / 7;
             var li = document.getElementsByClassName("nav-li");
             for (var i = 0; i < li.length; i++) {
                 li[i].style.width = newWidth + "px";
-            }
-            
-             var tangram = [
- { p: [{ x: 0, y: 0 }, { x: 40, y: 0 }, { x: 40, y: 160 }, { x: 0, y: 160 }], color: "#caff67" },
- { p: [{ x: 40, y: 0 }, { x: 160, y: 0 }, { x: 160, y: 40 }, { x: 40, y: 40 }], color: "#67becf" },
- { p: [{ x: 40, y: 40 }, { x: 120, y: 40 }, { x: 120, y: 120 }, { x: 40, y: 120 }], color: "#ef3d61" },
- { p: [{ x: 120, y: 40 }, { x: 160, y: 40 }, { x: 160, y: 0 }, { x: 200, y: 0 }, { x: 200, y: 160 }, { x: 160, y: 160 }, { x: 160, y: 120 }, { x: 120, y: 120 }], color: "#f9f51a" },
- { p: [{ x: 0, y: 160 }, { x: 40, y: 160 }, { x: 40, y: 120 }, { x: 80, y: 120 }, { x: 80, y: 160 }, { x: 120, y: 160 }, { x: 120, y: 200 }, { x: 0, y: 200 }], color: "#a54c09" },
- { p: [{ x: 80, y: 120 }, { x: 160, y: 120 }, { x: 160, y: 160 }, { x: 200, y: 160 }, { x: 200, y: 200 }, { x: 120, y: 200 }, { x: 120, y: 160 }, { x: 80, y: 160 }], color: "#fa8ccc" }
-            ];
-            var canvas = document.querySelector("canvas"); //获取canvas元素
-            var context = canvas.getContext("2d");  //获取绘图上下文环境
-            for (var i = 0; i < tangram.length; i++) {
-                draw(context, tangram[i]);
             };
-            function draw(ctxt, piece) {
+
+            //-----------------------福 BEGIN-----------------
+            var tangramLuck = [
+{ p: [{ x: 5, y: 8 }, { x: 10, y: 0 }, { x: 20, y: 29 }, { x: 15, y: 37 }], color: "#caff67" },
+{ p: [{ x: 1, y: 40 }, { x: 40, y: 40 }, { x: 40, y: 50 }, { x: 1, y: 50 }], color: "#67becf" },
+{ p: [{ x: 30, y: 50 }, { x: 40, y: 50 }, { x: 15, y: 100 }, { x: 5, y: 100 }], color: "#ef3d61" },
+{ p: [{ x: 20, y: 92 }, { x: 30, y: 70 }, { x: 30, y: 150 }, { x: 20, y: 150 }], color: "#f9f51a" },
+{ p: [{ x: 30, y: 70 }, { x: 40, y: 95 }, { x: 35, y: 90 }, { x: 30, y: 80 }], color: "#a54c09" },
+            //----------------------福 右侧----------------------
+{ p: [{ x: 80, y: 30 }, { x: 140, y: 30 }, { x: 140, y: 40 }, { x: 80, y: 40 }], color: "#fa8ccc" },
+{ p: [{ x: 85, y: 50 }, { x: 135, y: 50 }, { x: 135, y: 90 }, { x: 85, y: 90 }], color: "#ef3d61" },
+{ p: [{ x: 95, y: 60 }, { x: 125, y: 60 }, { x: 125, y: 80 }, { x: 95, y: 80 }], color: "#f6f3f3" },
+{ p: [{ x: 70, y: 100 }, { x: 150, y: 100 }, { x: 150, y: 160 }, { x: 70, y: 160 }], color: "#67becf" },
+{ p: [{ x: 80, y: 110 }, { x: 140, y: 110 }, { x: 140, y: 150 }, { x: 80, y: 150 }], color: "#f6f3f3" },
+{
+    p: [
+        { x: 105, y: 110 }, { x: 115, y: 110 }, { x: 115, y: 125 }, { x: 140, y: 125 },
+        { x: 140, y: 135 }, { x: 115, y: 135 }, { x: 115, y: 150 }, { x: 105, y: 150 },
+        { x: 105, y: 135 }, { x: 80, y: 135 }, { x: 80, y: 125 }, { x: 105, y: 125 }
+    ], color: "#caff67"
+},
+            ];
+
+
+
+            var canvasLuck = document.querySelector("luck"); //获取canvas元素
+
+            var contextLuck = luck.getContext("2d");  //获取绘图上下文环境
+
+            for (var i = 0; i < tangramLuck.length; i++) {
+                drawLuck(contextLuck, tangramLuck[i]);
+            };
+            function drawLuck(ctxt, piece) {
                 ctxt.beginPath();  //开始路径
                 ctxt.moveTo(piece.p[0].x, piece.p[0].y);  //canvas画笔移动到目标点
                 for (var i = 1; i < piece.p.length; i++) {
@@ -39,6 +60,35 @@
                 ctxt.stroke();
                 ctxt.fill(); //图形的填充
             }
+
+
+
+            //------------------------福 END------------------
+
+            //           var tangram = [
+            //{ p: [{ x: 0, y: 0 }, { x: 40, y: 0 }, { x: 40, y: 160 }, { x: 0, y: 160 }], color: "#caff67" },
+            //{ p: [{ x: 40, y: 0 }, { x: 160, y: 0 }, { x: 160, y: 40 }, { x: 40, y: 40 }], color: "#67becf" },
+            //{ p: [{ x: 40, y: 40 }, { x: 120, y: 40 }, { x: 120, y: 120 }, { x: 40, y: 120 }], color: "#ef3d61" },
+            //{ p: [{ x: 120, y: 40 }, { x: 160, y: 40 }, { x: 160, y: 0 }, { x: 200, y: 0 }, { x: 200, y: 160 }, { x: 160, y: 160 }, { x: 160, y: 120 }, { x: 120, y: 120 }], color: "#f9f51a" },
+            //{ p: [{ x: 0, y: 160 }, { x: 40, y: 160 }, { x: 40, y: 120 }, { x: 80, y: 120 }, { x: 80, y: 160 }, { x: 120, y: 160 }, { x: 120, y: 200 }, { x: 0, y: 200 }], color: "#a54c09" },
+            //{ p: [{ x: 80, y: 120 }, { x: 160, y: 120 }, { x: 160, y: 160 }, { x: 200, y: 160 }, { x: 200, y: 200 }, { x: 120, y: 200 }, { x: 120, y: 160 }, { x: 80, y: 160 }], color: "#fa8ccc" }
+            //           ];
+            //           var canvas = document.querySelector("canvas"); //获取canvas元素
+            //           var context = canvas.getContext("2d");  //获取绘图上下文环境
+            //           for (var i = 0; i < tangram.length; i++) {
+            //               draw(context, tangram[i]);
+            //           };
+            //           function draw(ctxt, piece) {
+            //               ctxt.beginPath();  //开始路径
+            //               ctxt.moveTo(piece.p[0].x, piece.p[0].y);  //canvas画笔移动到目标点
+            //               for (var i = 1; i < piece.p.length; i++) {
+            //                   ctxt.lineTo(piece.p[i].x, piece.p[i].y);  //canvas画笔依次绘制路径点
+            //               };
+            //               ctxt.closePath();  //闭合路径
+            //               ctxt.fillStyle = piece.color; //填充颜色
+            //               ctxt.stroke();
+            //               ctxt.fill(); //图形的填充
+            //           }
         }
 
         window.onresize = function () {
@@ -57,13 +107,13 @@
 <body>
     <div class="nav-top">
         <ul class="nav-ul" id="ul1">
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:red">首页</div></a></li>
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:orange">博文</div></a></li>
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:yellowgreen">图片</div></a></li>
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:green">贰</div></a></li>
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:darkcyan">零</div></a></li>
-            <li class="nav-li"><a href="https://likeheartzh.github.io/"><div class="li-div" style="color:blue">壹</div></a></li>
-            <li class="nav-li"><a href="index.html"><div class="li-div" style="color:purple">柒</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:red">首页</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:orange">博文</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:yellowgreen">图片</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:green">贰</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:darkcyan">零</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:blue">壹</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:purple">柒</div></a></li>
         </ul>
     </div>
 
@@ -74,17 +124,21 @@
     <div class="div-content">
         <br />
         空中飞过的不是鸟 水中游荡的亦非鱼
-        
+
         <div class="div-canvas" style="margin-top:150px">
-            <canvas id="canvas" width="200" height="200">your browser does not support the canvas tag!</canvas>
+            <canvas id="luck" width="180" height="300">your browser does not support the canvas tag!</canvas>
+            <br />
+
         </div>
-        
+
     </div>
 
     <div class="footer">
         <br />
-        <span class="footer-span">历史访问人数:<a style="color:purple">16357</a></span><br /><br />
+        <span class="footer-span">历史访问人数：<a style="color:purple">0000</a></span><br /><br />
         <div class="footer-span">
+            <span> 我的博客：</span>
+            <a target="_blank" href="http://www.cnblogs.com/LikeHeart/">cnblogs</a> &nbsp;
             <span> 联系方式：</span>
             <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=HigpKicoLS8oLV5vbzB9cXM">给我写信</a>
         </div>
