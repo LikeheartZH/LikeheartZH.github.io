@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <link type="text/css" rel="stylesheet" href="Resources\css\body.css" />
+    <!--<link type="text/css" rel="stylesheet" href="https://rawgithub.com/LikeheartZH/LikeheartZH.github.io/master/Resources/css/style.css" />-->
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var ul = document.getElementById("ul1");
+            var width = ul.offsetWidth;
+            var newWidth = (width - 20) / 7;
+            var li = document.getElementsByClassName("nav-li");
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.width = newWidth + "px";
+            };
+
+            window.onresize = function () {
+                var ul = document.getElementById("ul1");
+                var width = ul.offsetWidth;
+                var newWidth = (width - 20) / 7;
+                var li = document.getElementsByClassName("nav-li");
+                for (var i = 0; i < li.length; i++) {
+                    li[i].style.width = newWidth + "px";
+                }
+            };
+        }
+
+    </script>
+    <title>Welcome</title>
+</head>
+<body>
+    <iframe id="frameTop" src="top.html" scrolling="no" frameborder="0"></iframe>
+    <div style="height:50px;margin-bottom:10px"></div>
+    <div id="content">
+        <iframe id="frameContent" src="content.html" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <iframe id="frameFooter" src="footer.html" scrolling="no" frameborder="0"></iframe>
+</body>
+
+
+</html>

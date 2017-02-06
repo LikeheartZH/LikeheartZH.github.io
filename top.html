@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>topNav</title>
+    <link type="text/css" rel="stylesheet" href="Resources\css\top.css" />
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var ul = document.getElementById("ul1");
+            var width = ul.offsetWidth;
+            var newWidth = (width - 20) / 7;
+            var li = document.getElementsByClassName("nav-li");
+            for (var i = 0; i < li.length; i++) {
+                li[i].style.width = newWidth + "px";
+            };
+
+            window.onresize = function () {
+                var ul = document.getElementById("ul1");
+                var width = ul.offsetWidth;
+                var newWidth = (width - 20) / 7;
+                var li = document.getElementsByClassName("nav-li");
+                for (var i = 0; i < li.length; i++) {
+                    li[i].style.width = newWidth + "px";
+                }
+            };
+        }
+    </script>
+
+</head>
+<body>
+
+    <div class="nav-top">
+        <ul class="nav-ul" id="ul1">
+            <li class="nav-li"><a href="justHaveTest.html" target="_parent"><div class="li-div" style="color:red">首页</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:orange">博文</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:yellowgreen">图片</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:green">贰</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:darkcyan">零</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:blue">壹</div></a></li>
+            <li class="nav-li"><a href="justHaveTest.html"><div class="li-div" style="color:purple">柒</div></a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
