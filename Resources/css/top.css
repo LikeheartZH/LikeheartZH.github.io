@@ -1,0 +1,51 @@
+.nav-top {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFFFF;
+    box-shadow: -2px 5px 5px #888888;
+    position: fixed;
+    text-align: center;
+}
+
+.nav-ul {
+    width: 80%;
+    margin: 10px auto;
+    padding: 0;
+}
+
+.nav-li {
+    float: left;
+    list-style: none;
+    display: inline;
+}
+
+    .nav-li a {
+        display: inline-block;
+    }
+
+.li-div {
+    text-align: center;
+    line-height: 30px;
+    width: 60px;
+    height: 30px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    color: pink;
+    font-size: large;
+}
+
+    .li-div:hover {
+        text-shadow: 8px 5px 1px pink;
+        /*Ðý×ª*/
+        transform: rotate(20deg);
+        -ms-transform: rotate(20deg); /* IE 9 */
+        -moz-transform: rotate(20deg); /* Firefox */
+        -webkit-transform: rotate(20deg); /* Safari ºÍ Chrome */
+        -o-transform: rotate(20deg); /* Opera */
+    }
+
+a {
+    text-decoration: none;
+}
