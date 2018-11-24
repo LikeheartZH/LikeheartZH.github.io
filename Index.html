@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>上传下载Demo</title>
+    <script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <div>
+        <input type="button" value="测试服务运行" id="isOk" />
+    </div>
+
+    <div>
+        上传文件 <input type="file" id="file" />
+        <input type="button" id="upload" value="上传文件" />
+    </div>
+
+    <div>
+        <form action="http://localhost:42551/api/File/DownloadFile" method="get" id="form">
+            下载文件 <input type="text" id="name" name="fileName" value="222" />
+        </form>
+        <input type="button" id="download" value="下载文件" />
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    $("#isOk").click(function () {
+        $.ajax({
+            url: "http://106.12.80.214:8080/api/File/IsOk",
+            type: "GET",
+			dataType:'json',
+			processData: false, 
+            success: function (data) {
+                alert(data);
+            },
+			error:function() {
+                alert("未能连接到服务");
+            }
+        });
+    });
+
+    //上传
+    $("#upload").click(function () {
+        var formData = new FormData();
+        var file = document.getElementById("file").files[0];
+        formData.append("fileInfo", file);
+        $.ajax({
+            url: "http://localhost:42551/api/File/UploadFile",
+            type: "POST",
+            data: formData,
+            contentType: false,//必须false才会自动加上正确的Content-Type
+            processData: false,//必须false才会避开jQuery对 formdata 的默认处理，XMLHttpRequest会对 formdata 进行正确的处理
+            success: function (data) {
+                alert(data);
+            },
+            error: function (data) {
+                alert("上传失败！");
+            }
+        });
+    });
+
+    //下载
+    $("#download").click(function () {
+        var form = $("#form");
+        form.submit();
+    });
+</script>
